@@ -38,6 +38,8 @@ Dark mode UI option
 Upload CSV support for bulk prediction
 Mobile responsiveness
 
+Results:
+
 🤝 Contributing
 Pull requests are welcome! For major changes, please open an issue first.
 
