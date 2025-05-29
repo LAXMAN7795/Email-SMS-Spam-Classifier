@@ -39,7 +39,8 @@ Upload CSV support for bulk prediction
 Mobile responsiveness
 
 Results:
-
+1.Not Spam
+![image alt](https://github.com/LAXMAN7795/Email-SMS-Spam-Classifier/blob/d6c292480c8e55a866a6f9b766db9a0505384ac1/EmalNotSpam.png)
 🤝 Contributing
 Pull requests are welcome! For major changes, please open an issue first.
 
