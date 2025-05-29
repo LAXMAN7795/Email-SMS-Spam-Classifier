@@ -1,42 +1,63 @@
-**Email/SMS Spam Classifier**
+📩 Spam Message Classifier – Email/SMS Spam Detection
+A machine learning-based web application that classifies messages as Spam or Not Spam, using NLP techniques and deployed via Streamlit.
 
-A powerful and intuitive web application that detects whether a given message is **Spam** or **Not Spam** 
-using Natural Language Processing (NLP) and a trained machine learning model. Built with Python, Streamlit, and NLTK, it's lightweight, fast, and user-friendly.
+🚀 Demo
+Try it locally to enter a message and see real-time classification.
 
-Features
-✅ Classifies messages as **Spam** or **Not Spam**  
-✅ Real-time prediction via Streamlit UI  
-✅ Pre-trained ML model using **TF-IDF Vectorizer** and **Multinomial Naive Bayes**  
-✅ Text preprocessing: lowercasing, stopword removal, punctuation stripping, stemming  
-✅ Clean, minimal, and responsive interface
+📁 Dataset
+Source: SMS Spam Collection Dataset
+The dataset contains 5,500+ SMS messages labeled as ham (not spam) or spam.
 
-Tech Stack
-- **Frontend:** Streamlit
-- **Backend/NLP:** Python, NLTK, Scikit-learn
-- **Model:** TF-IDF + Multinomial Naive Bayes (Pickled)
+| v1     | v2                              |
+|--------|---------------------------------|
+| ham    | Go until jurong point...        |
+| spam   | WINNER!! As a valued network... |
 
-How It Works
-1. User enters a message
-2. Text is preprocessed:
-   - Lowercasing
-   - Tokenization
-   - Removing punctuation and stopwords
-   - Stemming
-3. Transformed text is vectorized using TF-IDF
-4. Model predicts whether it's spam or not
+Column v1 renamed to target and v2 to text
+Target labels encoded: ham → 0, spam → 1
 
-🧠 Model Training
-The model was trained on a labeled dataset (e.g., SMS Spam Collection) using the following pipeline:
-Preprocessing: lowercase, remove stopwords/punctuation, stemming
-Feature Extraction: TF-IDF Vectorizer
-Classification: Multinomial Naive Bayes
+🧹 Text Preprocessing
+Using NLTK, the following transformations were applied:
+Lowercasing
+Tokenization
+Removing punctuation and stopwords
+Stemming using PorterStemmer
+Feature Engineering:
+num_characters – total characters in message
+num_words – total words
+num_sentences – number of sentences
 
-🌍 Future Enhancements
-Deploy live on Streamlit Cloud or Heroku
-Add confusion matrix and accuracy metrics
-Dark mode UI option
-Upload CSV support for bulk prediction
-Mobile responsiveness
+📊 Vectorization
+Used TF-IDF Vectorizer from sklearn.feature_extraction.text
+
+🧠 Model Building
+Tested multiple classifiers from sklearn.naive_bayes:
+GaussianNB
+BernoulliNB
+✅ MultinomialNB (selected)
+⚙️ Evaluation Metrics
+Used:
+accuracy_score
+confusion_matrix
+precision_score
+📈 MultinomialNB gave the best results in both accuracy and precision.
+
+🖥️ Streamlit App
+UI created using Streamlit
+User inputs a message → Model classifies it in real time
+
+💾 Model Deployment
+Trained model and vectorizer saved using pickle
+Easily reloadable for deployment.
+
+🛠 Tech Stack
+Tool/Library	         Purpose
+Python	               Programming Language
+NLTK	                  Text Preprocessing
+scikit-learn	         ML Modeling & Evaluation
+Pandas/NumPy	         Data Handling
+Streamlit	            UI for Model Deployment
+Pickle	               Model Serialization
 
 Results:
 1.Not Spam
