@@ -8,6 +8,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 nltk.download('punkt')
+nltk.download('punkt_tab')
 nltk.download('stopwords')
 
 ps = PorterStemmer()
@@ -41,7 +42,6 @@ def trasform_text(text):
     new_text.append(ps.stem(i))# stemming
 
   return " ".join(new_text)
-trasform_text('did you know the new iPhone is so awesome')
 
 if st.button('Predict'):
   # Preprocess
