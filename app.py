@@ -7,6 +7,9 @@ from nltk.stem.porter import PorterStemmer
 import warnings
 warnings.filterwarnings('ignore')
 
+nltk.download('punkt')
+nltk.download('stopwords')
+
 ps = PorterStemmer()
 
 tfidf = pickle.load(open('vectorizer.pkl','rb'))
